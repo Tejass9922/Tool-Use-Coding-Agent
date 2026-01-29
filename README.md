@@ -1,4 +1,4 @@
-# Tool-Use Coding Agent (Python RL Env + Rust Runner)
+# Tool-Use Coding Agent (Python RL Env and Rust Runner)
 
 This project is a compact starter kit for a **tool-use coding agent**:
 
