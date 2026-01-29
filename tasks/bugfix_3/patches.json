@@ -1,0 +1,14 @@
+[
+  {
+    "name": "wrong_strip_line_only",
+    "diff": "--- a/src/solution.py\n+++ b/src/solution.py\n@@ -4,5 +4,6 @@\n     Example: \"1,2,3\" -> 6\n     \"\"\"\n     # BUG: fails on whitespace and empty segments\n+    line = line.strip()\n     parts = line.split(\",\")\n     return sum(int(p) for p in parts)\n"
+  },
+  {
+    "name": "correct_strip_filter_empty",
+    "diff": "--- a/src/solution.py\n+++ b/src/solution.py\n@@ -4,5 +4,7 @@\n     Example: \"1,2,3\" -> 6\n     \"\"\"\n     # BUG: fails on whitespace and empty segments\n-    parts = line.split(\",\")\n+    if not line.strip():\n+        return 0\n+    parts = [p.strip() for p in line.split(\",\") if p.strip() != \"\"]\n     return sum(int(p) for p in parts)\n"
+  },
+  {
+    "name": "wrong_replace_commas",
+    "diff": "--- a/src/solution.py\n+++ b/src/solution.py\n@@ -4,5 +4,5 @@\n     Example: \"1,2,3\" -> 6\n     \"\"\"\n     # BUG: fails on whitespace and empty segments\n-    parts = line.split(\",\")\n-    return sum(int(p) for p in parts)\n+    cleaned = line.replace(\",\", \"\")\n+    return int(cleaned)\n"
+  }
+]

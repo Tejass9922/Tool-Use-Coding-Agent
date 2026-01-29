@@ -1,0 +1,14 @@
+[
+  {
+    "name": "wrong_start",
+    "diff": "--- a/src/solution.py\n+++ b/src/solution.py\n@@ -3,7 +3,7 @@\n     # BUG: off-by-one in loop\n     if n <= 1:\n         return n\n-    a, b = 0, 1\n+    a, b = 1, 1\n     for _ in range(n):\n         a, b = b, a + b\n     return a\n"
+  },
+  {
+    "name": "correct_loop_n_minus_1",
+    "diff": "--- a/src/solution.py\n+++ b/src/solution.py\n@@ -4,6 +4,6 @@\n     if n <= 1:\n         return n\n     a, b = 0, 1\n-    for _ in range(n):\n+    for _ in range(n - 1):\n         a, b = b, a + b\n     return a\n"
+  },
+  {
+    "name": "wrong_return_b",
+    "diff": "--- a/src/solution.py\n+++ b/src/solution.py\n@@ -6,4 +6,4 @@\n     a, b = 0, 1\n     for _ in range(n):\n         a, b = b, a + b\n-    return a\n+    return b\n"
+  }
+]

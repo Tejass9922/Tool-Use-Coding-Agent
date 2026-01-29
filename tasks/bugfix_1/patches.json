@@ -1,0 +1,14 @@
+[
+  {
+    "name": "wrong_strip_only",
+    "diff": "--- a/src/solution.py\n+++ b/src/solution.py\n@@ -1,3 +1,3 @@\n def is_palindrome(s: str) -> bool:\n-    # BUG: does not normalize whitespace / punctuation / casing\n+    s = s.strip()\n     return s == s[::-1]\n"
+  },
+  {
+    "name": "wrong_lower_no_spaces",
+    "diff": "--- a/src/solution.py\n+++ b/src/solution.py\n@@ -1,3 +1,3 @@\n def is_palindrome(s: str) -> bool:\n-    # BUG: does not normalize whitespace / punctuation / casing\n+    s = s.lower()\n     return s == s[::-1]\n"
+  },
+  {
+    "name": "correct_normalize",
+    "diff": "--- a/src/solution.py\n+++ b/src/solution.py\n@@ -1,3 +1,4 @@\n def is_palindrome(s: str) -> bool:\n-    # BUG: does not normalize whitespace / punctuation / casing\n-    return s == s[::-1]\n+    # Normalize: lowercase and remove spaces.\n+    t = \"\".join(ch.lower() for ch in s if not ch.isspace())\n+    return t == t[::-1]\n"
+  }
+]
